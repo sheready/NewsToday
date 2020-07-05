@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NewsToday</title>
+</head>
+<body>
+
+<h1>News Today</h1>
+<div class="container">
+    {% for new, des, i in context %}
+
+    <img src="{{i}}">
+    <h3>News:</h3>{{new}}
+    <h4>Description:</h4>{{des}}
+
+    {% endfor %}
+</div>
+    
+</body>
+</html>
