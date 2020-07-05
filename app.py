@@ -10,9 +10,9 @@ app = Flask(__name__,instance_relative_config = True)
 bootstrap = Bootstrap(app)
 
 @app.route('/')
-def Index():
+def index():
     newsapi = NewsApiClient(api_key = 'b3fefd9be43745ce806ac142643aca1e')
-    topheadlines = newsapi.get_top_headlines(sources = 'abc-news')
+    topheadlines = newsapi.get_top_headlines(sources = 'al-jazeera-english')
 
     articles = topheadlines['articles']
 
@@ -29,7 +29,7 @@ def Index():
     
     mylist = zip(news, desc, img)
 
-    return render_template('index.html', context = mylist)
+    return render_template('aljazeera.html', context = mylist)
 
 @app.route('/bbc')
 def bbc():
