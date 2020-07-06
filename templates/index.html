@@ -11,21 +11,36 @@
 </head>
 <body>
   {% block content %}
-<h1>OTHER NEWS HEADLINES</h1>
+<h1 style="text-align: center;">HEADLINES FROM VARIOUS SOURCES</h1>
 <div class="card">
-  {% for  new, des, i, date, url in context %}
-          <div class="card-body">
-            <h4 class="card-title">Published at:</h4>{{date}}<br>
-            <img src="{{i}}" class="img-rounded">
-            
-            <h3>News:</h3>{{new}}
-            <h4>Description:</h4>{{des}}<br>
-            <a href="{{url}}" class="btn btn-primary">See full article</a>
-          </div>
+  <div class="card">
+    {% for  new, des, i, date, url in context %}
+      <div class="card-body">
+       
+        <h3 style="text-decoration: underline;">News:</h3>{{new}}<br>
+        <h4 class="card-title">Published at:</h4>{{date}}<br>
+        <img src="{{i}}" class="img-rounded" style="padding-left: 100px;">
+        
+          
+          <p style="word-wrap: normal;">Description:</p>{{des}}<br>
+          <a href="{{url}}" class="btn btn-primary" style="float: right;">See full article</a><br><hr>
+     
+      </div>
 
-  {% endfor %}
-  {% endblock %}
+
+    {% endfor %}
 </div>
+<footer class="page-footer font-small" style="background-color: black;">
+
+  <!-- Copyright -->
+  <div class="footer-copyright text-center" style="color: aliceblue;">© 2020 Copyright:NEWSTODAY
+    
+  </div>
+  <!-- Copyright -->
+
+</footer>
+{% endblock %}
+
     
 </body>
 </html>
