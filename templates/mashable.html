@@ -13,8 +13,8 @@
     {% block content%}
 
     <h1 style="text-align: center;">MASHABLE TECH NEWS</h1>
+    
     <div class="card">
-      <div class="card">
         {% for  new, des, i, date, url in context %}
           <div class="card-body">
             <h3 style="text-decoration: underline;">News:</h3>{{new}}<br>
@@ -28,9 +28,19 @@
           </div>
 
 
-    {% endfor %}
-    {% endblock %}
+    {% endfor %}  
+  </div>
+  <footer class="page-footer font-small" style="background-color: black;">
+
+    <!-- Copyright -->
+    <div class="footer-copyright text-center" style="color: aliceblue;">© 2020 Copyright:NEWSTODAY
+      
     </div>
+    <!-- Copyright -->
+  
+  </footer>
+    {% endblock %}
+  
     
 </body>
 </html>
