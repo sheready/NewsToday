@@ -20,6 +20,7 @@ def index():
     news = []
     img = []
     date = []
+    url = []
 
     for i in range(len(articles)):
         myarticles = articles[i]
@@ -28,8 +29,10 @@ def index():
         desc.append(myarticles['description'])
         img.append(myarticles['urlToImage'])
         date.append(myarticles['publishedAt'])
+        url.append(myarticles['url'])
+
     
-    mylist = zip(news, desc, img, date)
+    mylist = zip(news, desc, img, date, url)
 
     return render_template('aljazeera.html', context = mylist)
 
@@ -44,6 +47,7 @@ def bbc():
     news = []
     img = []
     date = []
+    url = []
 
     for i in range(len(articles)):
         myarticles = articles[i]
@@ -52,8 +56,9 @@ def bbc():
         desc.append(myarticles['description'])
         img.append(myarticles['urlToImage'])
         date.append(myarticles['publishedAt'])
+        url.append(myarticles['url'])
     
-    mylist = zip(news, desc, img, date)
+    mylist = zip(news, desc, img, date, url)
 
     return render_template('bbc.html', context = mylist)
 
@@ -68,6 +73,7 @@ def abc():
     news = []
     img = []
     date = []
+    url = []
 
     for i in range(len(articles)):
         myarticles = articles[i]
@@ -76,8 +82,9 @@ def abc():
         desc.append(myarticles['description'])
         img.append(myarticles['urlToImage'])
         date.append(myarticles['publishedAt'])
+        date.append(myarticles['url'])
     
-    mylist = zip(news, desc, img, date)
+    mylist = zip(news, desc, img, date, url)
 
     return render_template('abc.html', context = mylist)
 
