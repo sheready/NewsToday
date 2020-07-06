@@ -12,13 +12,14 @@ bootstrap = Bootstrap(app)
 @app.route('/')
 def index():
     newsapi = NewsApiClient(api_key = 'b3fefd9be43745ce806ac142643aca1e')
-    topheadlines = newsapi.get_top_headlines(sources = 'al-jazeera-english')
+    topheadlines = newsapi.get_top_headlines(sources = 'mashable')
 
     articles = topheadlines['articles']
 
     desc = []
     news = []
     img = []
+    date = []
 
     for i in range(len(articles)):
         myarticles = articles[i]
@@ -26,21 +27,23 @@ def index():
         news.append(myarticles['title'])
         desc.append(myarticles['description'])
         img.append(myarticles['urlToImage'])
+        date.append(myarticles['publishedAt'])
     
-    mylist = zip(news, desc, img)
+    mylist = zip(news, desc, img, date)
 
     return render_template('aljazeera.html', context = mylist)
 
 @app.route('/bbc')
 def bbc():
     newsapi = NewsApiClient(api_key = 'b3fefd9be43745ce806ac142643aca1e')
-    topheadlines = newsapi.get_top_headlines(sources = 'bbc-news')
+    topheadlines = newsapi.get_top_headlines(sources = 'techcrunch')
 
     articles = topheadlines['articles']
 
     desc = []
     news = []
     img = []
+    date = []
 
     for i in range(len(articles)):
         myarticles = articles[i]
@@ -48,21 +51,23 @@ def bbc():
         news.append(myarticles['title'])
         desc.append(myarticles['description'])
         img.append(myarticles['urlToImage'])
+        date.append(myarticles['publishedAt'])
     
-    mylist = zip(news, desc, img)
+    mylist = zip(news, desc, img, date)
 
     return render_template('bbc.html', context = mylist)
 
 @app.route('/abc')
 def abc():
     newsapi = NewsApiClient(api_key = 'b3fefd9be43745ce806ac142643aca1e')
-    topheadlines = newsapi.get_top_headlines(sources = 'abc-news-au')
+    topheadlines = newsapi.get_top_headlines(sources = 'wired')
 
     articles = topheadlines['articles']
 
     desc = []
     news = []
     img = []
+    date = []
 
     for i in range(len(articles)):
         myarticles = articles[i]
@@ -70,8 +75,9 @@ def abc():
         news.append(myarticles['title'])
         desc.append(myarticles['description'])
         img.append(myarticles['urlToImage'])
+        date.append(myarticles['publishedAt'])
     
-    mylist = zip(news, desc, img)
+    mylist = zip(news, desc, img, date)
 
     return render_template('abc.html', context = mylist)
 
