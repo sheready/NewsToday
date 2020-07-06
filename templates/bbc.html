@@ -13,13 +13,14 @@
     {% block content %}
     <h1>BBC News Today</h1>
 <div class="card">
-        {% for  new, des, i, date in context %}
+        {% for  new, des, i, date, url in context %}
           <div class="card-body">
             <h4 class="card-title">Published at:</h4>{{date}}
             <img src="{{i}}" class="img-rounded">
             
             <h3>News:</h3>{{new}}
             <h4>Description:</h4>{{des}}
+            <a href="{{url}}" class="btn btn-primary">See article</a>
           </div>
 
     {% endfor %}
