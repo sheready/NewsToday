@@ -15,12 +15,12 @@
 <div class="card">
         {% for  new, des, i, date, url in context %}
           <div class="card-body">
-            <h4 class="card-title">Published at:</h4>{{date}}
+            <h4 class="card-title">Published at:</h4>{{date}}<br>
             <img src="{{i}}" class="img-rounded">
             
             <h3>News:</h3>{{new}}
-            <h4>Description:</h4>{{des}}
-            <a href="{{url}}" class="btn btn-primary">See article</a>
+            <h4>Description:</h4>{{des}}<br>
+            <a href="{{url}}" class="btn btn-primary">See full article</a>
           </div>
 
     {% endfor %}
