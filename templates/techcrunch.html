@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NEWSTODAY</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+</head>
+<body>
+    {% block content %}
+    <h1 style="text-align: center;">TECHCRUNCH NEWS TODAY</h1>
+    <div class="card">
+        {% for  new, des, i, date, url in context %}
+          <div class="card-body">
+            <h3 style="text-decoration: underline;">News:</h3>{{new}}<br>
+            <h4 class="card-title">Published at:</h4>{{date}}<br>
+            <img src="{{i}}" class="img-rounded" style="padding-left: 100px;">
+            
+              
+              <h4 style="word-wrap: normal;">Description:</h4>{{des}}<br>
+              <a href="{{url}}" class="btn btn-primary" style="float: right;">See full article</a><br><hr>
+         
+          </div>
+   
+
+    {% endfor %}
+    {% endblock %}
+    </div>
+</body>
+</html>
