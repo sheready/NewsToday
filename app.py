@@ -91,7 +91,7 @@ def abc():
 @app.route('/headlines')
 def head():
     newsapi = NewsApiClient(api_key = 'b3fefd9be43745ce806ac142643aca1e')
-    topheadlines = newsapi.get_top_headlines(sources = 'cbs-news, cnn, the-wall-street-journal')
+    topheadlines = newsapi.get_top_headlines(sources = 'cbs-news, cnn, the-wall-street-journal, nbc-news')
 
     articles = topheadlines['articles']
 
@@ -100,6 +100,7 @@ def head():
     img = []
     date = []
     url = []
+    
 
     for i in range(len(articles)):
         myarticles = articles[i]
@@ -109,6 +110,7 @@ def head():
         img.append(myarticles['urlToImage'])
         date.append(myarticles['publishedAt'])
         url.append(myarticles['url'])
+        
     
     mylist = zip(news, desc, img, date, url)
 
