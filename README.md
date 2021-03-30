@@ -1,6 +1,6 @@
 # NEWSTODAY
 
-This is an application that help people view different articles and news from different sites.Heroku link https://newstodayy.herokuapp.com/
+This is an application that help people view different articles and news from different sites.Heroku link https://newsstoday.herokuapp.com/
 
 ## DESCRIPTION
 
